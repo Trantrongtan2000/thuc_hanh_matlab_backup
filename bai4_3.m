@@ -1,0 +1,11 @@
+w = linspace(-pi,pi,512);
+x=[1 -2 2 -3 3 4 0 -1]; 
+h = freqz(x,1,w); 
+subplot(211),plot(w/pi,abs(h)); 
+xlabel('\omega/\pi'); 
+ylabel('Bien do'); 
+title('Pho bien do |X(e^{j\omega})|'); 
+subplot(212),plot(w/pi,angle(h)); 
+xlabel('\omega/\pi'); 
+ylabel('Pha [rad]'); 
+title('Pho pha arg(X(e^{j\omega}))'); 

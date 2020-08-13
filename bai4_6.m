@@ -1,0 +1,24 @@
+w = linspace(-pi,pi,512); 
+x=[1 -2 2 -3 3 4 0 -1];  
+l=length(x);
+h=freqz(x,1,w); 
+n=0:l-1;
+x2=fliplr(x).*exp(j*n.*(l-1));
+h1=freqz(x2,1,w); 
+
+subplot(221),plot(w/pi,abs(h)); 
+xlabel('\omega/\pi'); 
+ylabel('Bien do'); 
+title('Pho bien do |X(e^{j\omega})|'); 
+subplot(222),plot(w/pi,angle(h)); 
+xlabel('\omega/\pi'); 
+ylabel('Pha [rad]'); 
+title('Pho pha arg(X(e^{j\omega}))'); 
+subplot(223),plot(w/pi,abs(h1)); 
+xlabel('\omega/\pi'); 
+ylabel('Bien do'); 
+title('Pho bien do |X(e^{j\omega})| dao thoi gian'); 
+subplot(224),plot(w/pi,angle(h1)); 
+xlabel('\omega/\pi'); 
+ylabel('Pha [rad]'); 
+title('Pho pha arg(X(e^{j\omega})) dao thoi gian');
